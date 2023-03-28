@@ -1,0 +1,57 @@
+using System;
+public static class Kata
+{
+  // return masked string
+  public static string Maskify(string cc)
+  {
+    string mask= "";
+    int stop;
+    if(cc.Length>4)
+    {
+      stop = cc.Length-4;
+    
+    
+      for(int s=0; s<stop; s++){
+        mask +='#';
+      }
+      for(int s=stop; s<cc.Length; s++){
+        mask+=cc[s];
+      }
+    }
+    else{
+      for(int s=0; s<cc.Length; s++){
+       mask+=cc[s];
+      }
+    }
+    return mask;
+  }
+}
+
+******************************Persistance class
+using System;
+
+public class Persist 
+{
+	public static int Persistence(long n) 
+	{
+		int result=1;
+    string resNum = n.ToString(); 
+    int numOfRec=0;
+   // if{n>}
+    while(n>=10)
+    {
+      for(int s=0; s<resNum.Length-1; s++)
+      {
+        result *= (int) Convert.ToInt64(resNum[s]);
+      }
+      n= result;
+      resNum = result.ToString();
+      numOfRec =numOfRec +1;
+    }
+    
+    return numOfRec;
+    // your code
+	}
+  
+ 
+}
